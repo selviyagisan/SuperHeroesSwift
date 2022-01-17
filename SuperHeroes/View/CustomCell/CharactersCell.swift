@@ -9,15 +9,19 @@ import UIKit
 
 class CharactersCell: UITableViewCell {
 
+    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var characterNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        characterImage.layer.cornerRadius = 10;
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    static func nib() -> UINib {
+        return UINib(nibName: "CharactersCell", bundle: nil)
+    }
 }

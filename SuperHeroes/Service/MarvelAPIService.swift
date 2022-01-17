@@ -9,9 +9,11 @@
 import Foundation
 import Moya
 
+var deneme:String?
 
 enum MarvelAPIService {
     case marvelChar(apiKey: String?, timeStamp: String?, hashKey: String?)
+    case comicsChar(id: String, apiKey: String, timeStamp: String, hashKey: String)
 }
 
 extension MarvelAPIService: TargetType, AccessTokenAuthorizable {
@@ -23,6 +25,9 @@ extension MarvelAPIService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .marvelChar:
             return "public/characters"
+            
+        case .comicsChar(let id, let apiKey, let timeStamp, let hashKey):
+            return "public/characters/\(id)/comics"
         }
     }
     
@@ -35,6 +40,13 @@ extension MarvelAPIService: TargetType, AccessTokenAuthorizable {
             if let apiKey = apiKey { parameters["apikey"] = apiKey }
             if let timeStamp = timeStamp { parameters["ts"] = timeStamp }
             if let hashKey = hashKey { parameters["hash"] = hashKey }
+            return parameters
+       
+        case .comicsChar(let id, let apiKey, let timeStamp, let hashKey):
+            var parameters: [String: Any] = [:]
+            parameters["apikey"] = apiKey
+            parameters["ts"] = timeStamp
+            parameters["hash"] = hashKey
             return parameters
         }
     }
@@ -49,7 +61,7 @@ extension MarvelAPIService: TargetType, AccessTokenAuthorizable {
     
     var method: Moya.Method {
         switch self {
-        case .marvelChar:
+        case .marvelChar, .comicsChar:
             return .get
 //        case .xxx :
 //            return .put

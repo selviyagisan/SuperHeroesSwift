@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (5.5.0)
+  - Kingfisher (4.9.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - ObjectMapper (3.5.3)
+  - SpringIndicator (5.0.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Kingfisher (= 4.9.0)
+  - Moya/Core (~> 14.0)
+  - ObjectMapper (~> 3.4)
+  - SpringIndicator
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Moya
+    - ObjectMapper
+    - SpringIndicator
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  SpringIndicator: 111bf862e1415e5ac7b3a43c0cd09633d5715fd6
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: dfb90251b401d62d9950e780cde7e2dcaaeb405d
+
+COCOAPODS: 1.11.2
